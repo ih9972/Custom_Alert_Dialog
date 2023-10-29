@@ -20,18 +20,20 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         Intent gi = getIntent();
         mTextView = (TextView) findViewById(R.id.textView12);
+        mTextView.setText("All of the credits belongs to Itai Hadar THE KING ");
     }
 
     /**
-     * This method defines the menu.
-     * @param menu The options menu in which you place your items.
+     * onCreateOptionsMenu method
+     * <p> Creating the options menu
+     * </p>
      *
-     * @return
+     * @param menu the Menu object to pass to the inflater
+     * @return true
      */
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main,menu);
-        return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 
     /**
@@ -42,23 +44,10 @@ public class MainActivity2 extends AppCompatActivity {
      */
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         st = item.getTitle().toString();
-        if (st.equals("creator")) {
-            mTextView.setText("The creator is Itai Hadar THE KING");
-        }
-        else if (st.equals("teacher")) {
-            mTextView.setText("The teacher is Albert Levy THE Champion");
-        }
-        else if (st.equals("development environment")) {
-            mTextView.setText("development environment is Android Studio");
+        if (st.equals("Main screen")) {
+            finish();
         }
         return super.onOptionsItemSelected(item);
+    }
 
-    }
-    /**
-     * this method closes this activity.
-     * @param view
-     */
-    public void return_to_main(View view) {
-        finish();
-    }
 }

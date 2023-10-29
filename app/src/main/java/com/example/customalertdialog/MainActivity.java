@@ -1,11 +1,14 @@
 package com.example.customalertdialog;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     String[] temp = {"arithmetic","geometric"};
     double a1,d,sn;
     ListView listV;
+    String st;
     TextView a1_display, d_display, n_display,sn_display;
     ArrayAdapter<Double> adp;
     Double[] arry = new Double[20];
@@ -166,14 +170,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         sn_display.setText(""+sn);
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
 
     /**
-     * this method is called when the "cradits" button is clicked
-     * it start an intent that will open a different activity
-     * @param view
-     */
-    public void tocradits(View view) {
-        Intent si = new Intent(this, MainActivity2.class);
-        startActivity(si);
+            * this method matches the credit to the option that is selected.
+            * @param item The menu item that was selected.
+     *
+             * @return
+             */
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        st = item.getTitle().toString();
+        if (st.equals("Credits screen")) {
+            Intent si = new Intent(this, MainActivity2.class);
+            startActivity(si);
+        }
+        return super.onOptionsItemSelected(item);
     }
+
 }

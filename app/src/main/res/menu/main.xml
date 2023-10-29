@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/creator"
-        android:title="creator"
+        android:id="@+id/Main"
+        android:title="Main screen"
         android:orderInCategory="100"/>
 
     <item
-        android:id="@+id/teacher"
-        android:title="teacher"
+        android:id="@+id/Credits"
+        android:title="Credits screen"
         android:orderInCategory="200" />
-
-    <item
-        android:id="@+id/development_enviroment"
-        android:orderInCategory="300"
-        android:title="development environment" />
 
     />
 </menu>
