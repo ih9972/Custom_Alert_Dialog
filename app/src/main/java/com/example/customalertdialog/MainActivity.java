@@ -109,8 +109,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         public void onClick(DialogInterface dialog, int which) {
             if (which == DialogInterface.BUTTON_POSITIVE) {
                 if (!(the_a1.getText().toString().equals("")) && !(the_d.getText().toString().equals(""))) {
-                    a1 = Double.parseDouble(the_a1.getText().toString());
-                    d = Double.parseDouble(the_d.getText().toString());
+                    if (the_a1.getText().toString().equals("-") || the_a1.getText().toString().equals(".") || the_a1.getText().toString().equals("-."))
+                        a1 = 0;
+                    else
+                        a1 = Double.parseDouble(the_a1.getText().toString());
+                    if (the_d.getText().toString().equals("-") || the_d.getText().toString().equals(".") || the_d.getText().toString().equals("-."))
+                        d = 0;
+                    else
+                        d = Double.parseDouble(the_d.getText().toString());
                     listV.setVisibility(View.VISIBLE);
                     a1_display.setText("" + a1);
                     d_display.setText("" + d);
@@ -187,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         st = item.getTitle().toString();
         if (st.equals("Credits screen")) {
-            Intent si = new Intent(this, MainActivity2.class);
+            Intent si = new Intent(this, CreditActivity.class);
             startActivity(si);
         }
         return super.onOptionsItemSelected(item);

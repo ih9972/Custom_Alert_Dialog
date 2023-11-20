@@ -4,20 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity2 extends AppCompatActivity {
+public class CreditActivity extends AppCompatActivity {
     TextView mTextView;
     String st;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_credits);
         Intent gi = getIntent();
         mTextView = (TextView) findViewById(R.id.textView12);
         mTextView.setText("All of the credits belongs to Itai Hadar THE KING ");
